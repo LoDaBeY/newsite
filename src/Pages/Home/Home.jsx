@@ -1,5 +1,6 @@
 //import the components for every page, this one is Home
-import { Header , Footer, MainContent } from "../Components/CompExtractor";
+import '../Home/Home.css'
+import { Header , Footer, MainContent } from "../../Components/CompExtractor";
 function Home() {
   return (
 <div >

@@ -5,7 +5,7 @@ import {useContext } from "react";
 import ThemeContext from "../../Context/ThemeContext";
 
 function Header() {
-  const {ChangeTheme} = useContext(ThemeContext);
+  const {MyTheme , ChangeTheme } = useContext(ThemeContext);
 
   return (
     < >
@@ -60,7 +60,7 @@ function Header() {
               </li>
             </ul>
 
-            <div onChange={() => { ChangeTheme('Light') }} className="Wrapper">
+            <div onChange={() => { ChangeTheme( MyTheme=== 'Dark'? 'Light': 'Dark') }} className="Wrapper">
               <input type="checkbox" id="hide-checkbox" />
               <label htmlFor="hide-checkbox" className="toggle">
                 <span className="toggle-button">

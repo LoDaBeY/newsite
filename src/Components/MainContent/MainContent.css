@@ -1,14 +1,14 @@
-.DarkMode {
+.Dark {
   background-color: #333;
   color: #fff;
 }
 
 .LightMode,
-.DarkMode {
+.Dark {
   animation: bounceInLeft 1.2s both;
 }
 
-.DarkMode.content {
+.Dark .content {
   background-color: #292626;
 }
 
@@ -82,11 +82,11 @@ body .content {
   text-decoration: none;
 }
 
-.DarkMode .CV {
+.Dark .CV {
   background-color: rgb(151, 60, 60);
 }
 
-.DarkMode .CV a {
+.Dark .CV a {
   color: #0e0d0d;
   text-decoration: none;
 }
@@ -101,7 +101,7 @@ i:hover {
   transform: translate(5px, 1px) scale(1.1, 1.1);
 }
 
-.DarkMode i {
+.Dark i {
   color: #e29828;
 }
 
