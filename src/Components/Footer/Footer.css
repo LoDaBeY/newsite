@@ -1,0 +1,8 @@
+.services {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px;
+  margin: 10px;
+  box-sizing: border-box;
+}
