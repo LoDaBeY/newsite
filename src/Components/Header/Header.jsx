@@ -1,14 +1,19 @@
 //call the css file to make it more organizing
 import { NavLink } from "react-router-dom";
 import "./Header.css";
-import {useContext } from "react";
+import { useContext } from "react";
 import ThemeContext from "../../Context/ThemeContext";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../Firebase/config";
+import { signOut } from "firebase/auth";
 
 function Header() {
-  const {MyTheme , ChangeTheme } = useContext(ThemeContext);
+  const [user, loading, error] = useAuthState(auth);
+
+  const { MyTheme, ChangeTheme } = useContext(ThemeContext);
 
   return (
-    < >
+    <>
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
@@ -27,40 +32,97 @@ function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-1 mb-md-0">
-              <li className="nav-item dropdown">
-                <NavLink
-                  className="nav-link dropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  to={""}
-                >
-                  Translation & Subtitling & Transcription
-                </NavLink>
-              </li>
-              <li className="nav-item dropdown">
-                <NavLink
-                  className="nav-link"
-                  role="button"
-                  id="sign-buttons"
-                  to="/Sign-in"
-                >
-                  Sign-In
-                </NavLink>
-              </li>
-              <li className="nav-item dropdown">
-                <NavLink
-                  className="nav-link"
-                  role="button"
-                  id="sign-buttons"
-                  to="/Sign-up"
-                >
-                  Sign-Up
-                </NavLink>
-              </li>
+              {user && (
+                <li className="nav-item dropdown">
+                  <NavLink
+                    className="nav-link dropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    to="/Translation"
+                  >
+                    Translation
+                  </NavLink>
+                </li>
+              )}
+              {user && (
+                <li className="nav-item dropdown">
+                  <NavLink
+                    className="nav-link"
+                    role="button"
+                    id="sign-buttons"
+                    to="/Subtitling"
+                  >
+                    Subtitling
+                  </NavLink>
+                </li>
+              )}
+              {user && (
+                <li className="nav-item dropdown">
+                  <NavLink
+                    className="nav-link"
+                    role="button"
+                    id="sign-buttons"
+                    to="/Transcription"
+                  >
+                    Transcription
+                  </NavLink>
+                </li>
+              )}
+
+              {!user && (
+                <li className="nav-item dropdown">
+                  <NavLink
+                    className="nav-link"
+                    role="button"
+                    id="sign-buttons"
+                    to="/Sign-in"
+                  >
+                    Sign-In
+                  </NavLink>
+                </li>
+              )}
+              {!user && (
+                <li className="nav-item dropdown">
+                  <NavLink
+                    className="nav-link"
+                    role="button"
+                    id="sign-buttons"
+                    to="/Sign-up"
+                  >
+                    Sign-Up
+                  </NavLink>
+                </li>
+              )}
+              {user && (
+                <li className="nav-item dropdown">
+                  <NavLink
+                    className="nav-link"
+                    role="button"
+                    id="sign-buttons"
+                    to=""
+                    onClick={() => {
+                      signOut(auth)
+                        .then(() => {
+                          // Sign-out successful.
+                        })
+                        .catch((error) => {
+                          // An error happened.
+                        });
+                    }}
+                  >
+                    Sign Out
+                  </NavLink>
+                </li>
+              )}
             </ul>
 
-            <div onChange={() => { ChangeTheme( MyTheme=== 'Dark'? 'Light': 'Dark') }} className="Wrapper">
+            <div
+              onChange={(eo) => {
+                ChangeTheme(MyTheme === "Dark" ? "Light" : "Dark");
+              }}
+              className="Wrapper"
+            >
               <input type="checkbox" id="hide-checkbox" />
               <label htmlFor="hide-checkbox" className="toggle">
                 <span className="toggle-button">

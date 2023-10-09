@@ -1,4 +1,5 @@
 import { createContext, useReducer } from "react";
+// @ts-ignore
 const ThemeContexttt = createContext();
 
 const initialData = {
@@ -22,6 +23,7 @@ export function ThemeProvider({ children }) {
   const [firstState, dispatch] = useReducer(reducer, initialData);
   const ChangeTheme = (newName) => {
     localStorage.setItem("Theme", newName);
+    // @ts-ignore
     dispatch({ type: "CHANGE_THEME", newValue: newName });
   };
   return (
