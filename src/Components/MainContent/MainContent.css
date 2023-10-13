@@ -137,3 +137,31 @@ i:hover {
     transform: none;
   }
 }
+/* Global styles */
+@media (max-width: 767px) {
+  body .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    height: 100vh;
+    background-color: #61555536;
+    justify-content: center;
+  }
+  .section1 h1 {
+    margin-bottom: 20px;
+    margin-top: 15px;
+  }
+  
+  .section2 img {
+    max-width: 190px;
+    border-radius: 50%;
+    animation: bounce 10s both;
+  }
+  
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Tablet styles */
+}

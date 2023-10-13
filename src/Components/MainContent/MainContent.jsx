@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../Firebase/config";
 
 function MainContent({ Subtitler, Transcription, Translator }) {
-  const [user, loading, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   return (
     <section className="content">
@@ -15,7 +15,9 @@ function MainContent({ Subtitler, Transcription, Translator }) {
         </h1>}
 
 
-        {!user &&         <h1>Please sign in or up to see the full services we're providing to you dear Visitor</h1>}
+        {!user &&         <div>
+          <h1>Please sign in or up to see the full services we're providing to you dear Visitor</h1>
+        </div>}
 
         {user && (
           <p>

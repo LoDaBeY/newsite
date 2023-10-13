@@ -3,10 +3,13 @@ import "./Sign.css";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../Firebase/config'
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Signin() {
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
+  const navigate = useNavigate();
+
   return (
     <div>
       <Header />
@@ -34,7 +37,7 @@ function Signin() {
                 .then((userCredential) => {
                   // Signed in
                   const user = userCredential.user;
-                  window.prompt('You are signed go to any services above')
+                  navigate("/");
                   // ...
                 })
                 .catch((error) => {

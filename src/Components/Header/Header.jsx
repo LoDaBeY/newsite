@@ -6,12 +6,13 @@ import ThemeContext from "../../Context/ThemeContext";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../Firebase/config";
 import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
-  const [user, loading, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   const { MyTheme, ChangeTheme } = useContext(ThemeContext);
-
+  const navigate = useNavigate();
   return (
     <>
       <nav className="navbar navbar-expand-lg">
@@ -35,7 +36,7 @@ function Header() {
               {user && (
                 <li className="nav-item dropdown">
                   <NavLink
-                    className="nav-link dropdown"
+                    className="nav-link"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -104,7 +105,7 @@ function Header() {
                     onClick={() => {
                       signOut(auth)
                         .then(() => {
-                          // Sign-out successful.
+                          navigate("/");
                         })
                         .catch((error) => {
                           // An error happened.

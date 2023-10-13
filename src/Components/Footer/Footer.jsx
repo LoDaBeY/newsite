@@ -14,7 +14,7 @@ function Footer() {
       {user && (
         <div className="row" id="services">
           <div className="col-md-4">
-            <div className="card m-2 p-3" style={{ width: "20rem" }}>
+            <div className="card m-2 p-3" style={{ width: "15rem" }}>
               <img src={Words} className="card-img-top mx-auto" alt="..." />
               <div className="card-body text-center">
                 <h5 className="card-title">WORDS</h5>
@@ -26,7 +26,7 @@ function Footer() {
             </div>
           </div>
           <div className="col-md-4">
-            <div className="card m-2 p-3" style={{ width: "20rem" }}>
+            <div className="card m-2 p-3" style={{ width: "15rem" }}>
               <img src={Andovar} className="card-img-top mx-auto" alt="..." />
               <div className="card-body text-center">
                 <h5 className="card-title">Andovar</h5>
@@ -38,7 +38,7 @@ function Footer() {
             </div>
           </div>
           <div className="col-md-4">
-            <div className="card m-2 p-3" style={{ width: "20rem" }}>
+            <div className="card m-2 p-3" style={{ width: "15rem" }}>
               <img src={Trenstec} className="card-img-top mx-auto" alt="..." />
               <div className="card-body text-center">
                 <h5 className="card-title">TrensTrec</h5>
