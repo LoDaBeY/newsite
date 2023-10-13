@@ -159,7 +159,9 @@ i:hover {
     border-radius: 50%;
     animation: bounce 10s both;
   }
-  
+  .container{
+    max-width: 320px
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {

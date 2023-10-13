@@ -3,9 +3,13 @@ import "./Sign.css";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../Firebase/config'
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 function Signup() {
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
+  const navigate = useNavigate();
+
   return (
     <div className="Tool">
       <Header />
@@ -34,7 +38,8 @@ function Signup() {
                 .then((userCredential) => {
                   // Signed up
                   const user = userCredential.user;
-                  console.log('done')
+                  navigate("/");
+
                   // ...
                 })
                 .catch((error) => {
@@ -45,6 +50,7 @@ function Signup() {
                 });
             }}
             type="submit"
+
           >
             {" "}
             Sign Up

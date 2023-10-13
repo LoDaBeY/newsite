@@ -10,7 +10,7 @@ function Footer() {
   const [user, loading, error] = useAuthState(auth);
 
   return (
-    <div className="container">
+    <div className="container" >
       {user && (
         <div className="row" id="services">
           <div className="col-md-4">

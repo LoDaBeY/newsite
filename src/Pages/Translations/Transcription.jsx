@@ -4,7 +4,7 @@ function Transcription() {
   return (
     <div>
       <Header />
-      <MainContent Transcription="Transcriptionist" Subtitler={undefined} Translator={undefined} />
+      <MainContent Transcription="Transcriptionist" Subtitler={undefined} Translator={undefined} DevTrans={undefined} />
     </div>
   );
 }

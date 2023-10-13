@@ -3,7 +3,7 @@ import photo from "../../Assets/profile.png";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../Firebase/config";
 
-function MainContent({ Subtitler, Transcription, Translator }) {
+function MainContent({ Subtitler, Transcription, Translator, DevTrans }) {
   const [user] = useAuthState(auth);
 
   return (
@@ -11,7 +11,7 @@ function MainContent({ Subtitler, Transcription, Translator }) {
       <div className="section1">
         <h2>Hello Visitor</h2>
         {user &&         <h1>
-          My Name's Khaled and I'm a {Subtitler} {Transcription} {Translator}
+          My Name's Khaled and I'm a {Subtitler} {Transcription} {Translator} {DevTrans}
         </h1>}
 
 

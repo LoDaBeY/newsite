@@ -5,7 +5,7 @@ function Home() {
   return (
 <div >
       <Header />
-      <MainContent Subtitler={undefined} Transcription={undefined} Translator={undefined} />
+      <MainContent Subtitler={undefined} Transcription={undefined} Translator={undefined} DevTrans="Transltor/Devloper" />
       <Footer/>
 </div>
   )

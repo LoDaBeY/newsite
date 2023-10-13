@@ -4,7 +4,7 @@ function Translation() {
   return (
     <div>
       <Header />
-      <MainContent  Translator='Translator' Subtitler={undefined} Transcription={undefined} />
+      <MainContent  Translator='Translator' Subtitler={undefined} Transcription={undefined} DevTrans={undefined} />
     </div>
   );
 }

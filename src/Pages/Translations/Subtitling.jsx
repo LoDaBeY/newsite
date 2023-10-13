@@ -4,7 +4,7 @@ function Subtitling() {
   return (
     <div>
       <Header />
-      <MainContent Subtitler="Subtitler" Transcription={undefined} Translator={undefined} />
+      <MainContent Subtitler="Subtitler" Transcription={undefined} Translator={undefined} DevTrans={undefined} />
     </div>
   );
 }
